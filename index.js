@@ -7,10 +7,10 @@ const LogButton = document.getElementById('LogButton');
 const GameParagraph = document.getElementById('Game');
 const Gamelog = document.getElementById('Game');
 let GList = new Game(""); 
+GList.addGameItem("You awake in a dark cave. You can see that there are three ways for you to progress dimly as your eyes begin to adjust to the light.");
 window.addEventListener('load', (event) => {
     if(window.localStorage.getItem("Game") !==null)  
     {
-  GList.addGameItem("You awake in a dark cave. You can see that there are three ways for you to progress dimly as your eyes begin to adjust to the light.")
 (GameParagraph.innerText =window.localStorage.getItem("Game"));
 var str1 = window.localStorage.getItem("Game");
 GameParagraph.innerText= window.localStorage.getItem("Game") + " " + GList.GameItemLog; 
