@@ -11,9 +11,9 @@ window.addEventListener('load', (event) => {
     if(window.localStorage.getItem("Game") !==null)  
     {
   GList.addGameItem("You awake in a dark cave. You can see that there are three ways for you to progress dimly as your eyes begin to adjust to the light.")
-(ListParagraph.innerText =window.localStorage.getItem("Game"));
+(GameParagraph.innerText =window.localStorage.getItem("Game"));
 var str1 = window.localStorage.getItem("Game");
-ListParagraph.innerText= window.localStorage.getItem("Game") + " " + GList.GameItemLog; 
+GameParagraph.innerText= window.localStorage.getItem("Game") + " " + GList.GameItemLog; 
     }
 });
 
@@ -28,11 +28,11 @@ GameParagraph.innerText = "You choose to go forward.";
 
  window.localStorage.setItem("list",JSON.stringify(GList.GameItemLog));
    console.log(window.localStorage.getItem("game"));
-   ListParagraph.innerText =window.localStorage.getItem("game");
+   GameParagraph.innerText =window.localStorage.getItem("game");
 });
 LogButton.addEventListener(`click`, function () {
- ListParagraph.innerText = ""; 
-ListParagraph.innerText = this.displayGameList(); 
+GameParagraph.innerText = ""; 
+GameParagraph.innerText = this.displayGameList(); 
 
   
 });
