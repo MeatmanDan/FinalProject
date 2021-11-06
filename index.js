@@ -20,7 +20,7 @@ GameParagraph.innerText= window.localStorage.getItem("Game") + " " + GList.GameI
     }
 });
 //GAME LOGIC 
-checkLocation(null) 
+function checkLocation() 
 { 
     if(fcount == 1 && rcount == 0 && lcount== 0) 
     {
