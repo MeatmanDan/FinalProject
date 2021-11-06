@@ -29,13 +29,13 @@ function checkLocation()
     fcount ==0; 
     rcount==0; 
     lcount==0; 
-    GameParagraph.innerText = GList.displayGameList(); 
+ 
     } 
     if(fcount == 0 && rcount == 1 && lcount== 0) 
     {
     GList.addGameItem("you push towards your right and feel stone surround you on both of your sides until you reach another opening");
     GameParagraph.innerText ="you push towards your right and feel stone surround you on both of your sides until you reach another opening"
-    GameParagraph.innerText = GList.displayGameList(); 
+   
 
     }
     if(fcount == 0 && rcount == 0 && lcount== 1) 
@@ -43,7 +43,7 @@ function checkLocation()
     GList.addGameItem("you feel a cold stone wall with a small metalic object jutting out from it. You run your hand up it and feel a wooden torch. You strike the torch on wall and a small spark jumps from the wall to the torch igniting it.");
     GameParagraph.innerText ="you feel a cold stone wall with a small metalic object jutting out from it. You run your hand up it and feel a wooden torch. You strike the torch on wall and a small spark jumps from the wall to the torch igniting it."
     document.body.style.backgroundColor = "orange";
-    GameParagraph.innerText = GList.displayGameList(); 
+   
 
     }
 
