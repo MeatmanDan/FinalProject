@@ -24,6 +24,10 @@ function checkLocation()
 { 
     if(fcount == 1 && rcount == 0 && lcount== 0) 
     {
+        fcount=0; 
+        rcount=0; 
+        lcount=0; 
+     
     GList.addGameItem("you brush against a cold stone wall and return to where you came from");
     GameParagraph.innerText ="you brush against a cold stone wall and return to where you came from"; 
     fcount ==0; 
