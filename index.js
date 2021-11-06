@@ -31,7 +31,7 @@ checkLocation(null)
     lcount==0; 
     } 
 
- return; 
+
 }
 
 UpButton.addEventListener(`click`, function () {
