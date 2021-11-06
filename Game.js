@@ -11,7 +11,7 @@ this.GameItemLog.push(GItem);
   }
   displayGameList(){
      var x =""; 
-     for (let i = 0; i < this.GameItemLog.length(); i++)
+     for (let i = 0; i < this.GameItemLog.length; i++)
       {
           x = this.GameItemLog[x] + "/n";
       }
