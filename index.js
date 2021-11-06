@@ -6,6 +6,7 @@ const LogButton = document.getElementById('LogButton');
 var lcount =0; 
 var rcount=0; 
 var fcount=0; 
+var torchev = false; 
 
 const GameParagraph = document.getElementById('Game');
 const Gamelog = document.getElementById('Game');
@@ -42,14 +43,27 @@ function checkLocation()
    
 
     }
-    if(fcount == 0 && rcount == 0 && lcount== 1) 
+    if(fcount == 0 && rcount == 0 && lcount== 1 && !torchev) 
     {
-    GList.addGameItem("you feel a cold stone wall with a small metalic object jutting out from it. You run your hand up it and feel a wooden torch. You strike the torch on wall and a small spark jumps from the wall to the torch igniting it.");
-    GameParagraph.innerText ="you feel a cold stone wall with a small metalic object jutting out from it. You run your hand up it and feel a wooden torch. You strike the torch on wall and a small spark jumps from the wall to the torch igniting it."
+    GList.addGameItem("you feel a cold stone wall with a small metalic object jutting out from it. You run your hand up it and feel a wooden torch. You strike the torch on wall and a small spark jumps from the wall to the torch igniting it. You then return to where you began");
+    GameParagraph.innerText ="you feel a cold stone wall with a small metalic object jutting out from it. You run your hand up it and feel a wooden torch. You strike the torch on wall and a small spark jumps from the wall to the torch igniting it. You then return to where you began"
     document.body.style.backgroundColor = "orange";
+    torchev = true; 
+    fcount=0; 
+    rcount=0; 
+    lcount=0; 
    
+    }
+    if(fcount == 0 && rcount == 0 && lcount== 1 && torchev) 
+    {
+        GList.addGameItem("you have already been this way");
+        GameParagraph.innerText ="you have already been this way";
+        fcount=0; 
+        rcount=0; 
+        lcount=0; 
 
     }
+
 
 
 
