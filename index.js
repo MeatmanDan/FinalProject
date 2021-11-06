@@ -20,8 +20,8 @@ ListParagraph.innerText= window.localStorage.getItem("Game") + " " + GList.GameI
 UpButton.addEventListener(`click`, function () {
    
   GList.addGameItem("You choose to go forward.");
-GameParagraph = ""; 
-GameParagraph = "You choose to go forward."; 
+GameParagraph.innerText = ""; 
+GameParagraph.innerText = "You choose to go forward."; 
  
   console.log(GList.GameItemLog);
  
