@@ -47,7 +47,7 @@ GameParagraph.innerText = "You choose to go forward.";
    console.log(window.localStorage.getItem("game"));
    GameParagraph.innerText =window.localStorage.getItem("game");
    fcount++;
-   checkLocation;
+   checkLocation();
 });
 LeftButton.addEventListener(`click`, function () {
    
@@ -62,7 +62,7 @@ LeftButton.addEventListener(`click`, function () {
      console.log(window.localStorage.getItem("game"));
      GameParagraph.innerText =window.localStorage.getItem("game");
      lcount++;
-     checkLocation;
+     checkLocation();
   });
   RightButton.addEventListener(`click`, function () {
    
@@ -77,7 +77,7 @@ LeftButton.addEventListener(`click`, function () {
      console.log(window.localStorage.getItem("game"));
      GameParagraph.innerText =window.localStorage.getItem("game");
      rcount++;
-     checkLocation;
+     checkLocation();
   });
 LogButton.addEventListener(`click`, function () {
 GameParagraph.innerText = ""; 
