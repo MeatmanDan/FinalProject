@@ -30,6 +30,32 @@ GameParagraph.innerText = "You choose to go forward.";
    console.log(window.localStorage.getItem("game"));
    GameParagraph.innerText =window.localStorage.getItem("game");
 });
+LeftButton.addEventListener(`click`, function () {
+   
+    GList.addGameItem("You choose to go left.");
+  GameParagraph.innerText = ""; 
+  GameParagraph.innerText = "You choose to go left."; 
+   
+    console.log(GList.GameItemLog);
+   
+  
+   window.localStorage.setItem("game",JSON.stringify(GList.GameItemLog));
+     console.log(window.localStorage.getItem("game"));
+     GameParagraph.innerText =window.localStorage.getItem("game");
+  });
+  RightButton.addEventListener(`click`, function () {
+   
+  GList.addGameItem("You choose to go right.");
+  GameParagraph.innerText = ""; 
+  GameParagraph.innerText = "You choose to go right."; 
+   
+    console.log(GList.GameItemLog);
+   
+  
+   window.localStorage.setItem("game",JSON.stringify(GList.GameItemLog));
+     console.log(window.localStorage.getItem("game"));
+     GameParagraph.innerText =window.localStorage.getItem("game");
+  });
 LogButton.addEventListener(`click`, function () {
 GameParagraph.innerText = ""; 
 GameParagraph.innerText = GList.displayGameList(); 
