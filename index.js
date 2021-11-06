@@ -26,7 +26,7 @@ GameParagraph.innerText = "You choose to go forward.";
   console.log(GList.GameItemLog);
  
 
- window.localStorage.setItem("list",JSON.stringify(GList.GameItemLog));
+ window.localStorage.setItem("game",JSON.stringify(GList.GameItemLog));
    console.log(window.localStorage.getItem("game"));
    GameParagraph.innerText =window.localStorage.getItem("game");
 });
