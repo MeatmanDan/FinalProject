@@ -1,16 +1,20 @@
-class ShoppingList {
-    constructor(listitem){
-    this.listitem =listitem;
-    this.ShoppingListLog =[];
+class Game {
+    constructor(gameitem){
+    this.gameitem =gameitem;
+    this.GameItemLog =[];
      //this.SArr = []; 
     }
   
-addListItem(LItem){
-this.ShoppingListLog.push(LItem);
+addGameItem(GItem){
+this.GameItemLog.push(GItem);
 
   }
-  clearList(){
-      const newArr = []; 
-      this.ShoppingListLog = newArr; 
+  displayGameList(){
+     var x =""; 
+     for (let i = 0; i < this.GameItemLog.length()-1; i++)
+      {
+          x = this.GameItemLog[x] + "/n";
+      }
+      return x; 
   }
 }
