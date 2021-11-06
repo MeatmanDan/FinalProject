@@ -13,7 +13,7 @@ this.GameItemLog.push(GItem);
      var x =""; 
      for (let i = 0; i < this.GameItemLog.length; i++)
       {
-          x = this.GameItemLog[x] + "/n";
+          x = x + this.GameItemLog[x] + "/n";
       }
       return x; 
   }
