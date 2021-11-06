@@ -3,6 +3,9 @@ const LeftButton = document.getElementById('LeftArrowButton');
 const UpButton = document.getElementById('UpArrowButton');
 const RightButton = document.getElementById('RightArrowButton');
 const LogButton = document.getElementById('LogButton');
+var lcount =0; 
+var rcount=0; 
+var fcount=0; 
 
 const GameParagraph = document.getElementById('Game');
 const Gamelog = document.getElementById('Game');
@@ -16,6 +19,20 @@ var str1 = window.localStorage.getItem("Game");
 GameParagraph.innerText= window.localStorage.getItem("Game") + " " + GList.GameItemLog; 
     }
 });
+//GAME LOGIC 
+checkLocation() 
+{ 
+    if(fcount == 1 && rcount == 0 && lcount== 0) 
+    {
+    GList.addGameItem("you brush against a cold stone wall and return to where you came from");
+    GameParagraph.innerText ="you brush against a cold stone wall and return to where you came from"; 
+    fcount ==0; 
+    rcount==0; 
+    lcount==0; 
+    } 
+
+
+}
 
 UpButton.addEventListener(`click`, function () {
    
@@ -29,6 +46,8 @@ GameParagraph.innerText = "You choose to go forward.";
  window.localStorage.setItem("game",JSON.stringify(GList.GameItemLog));
    console.log(window.localStorage.getItem("game"));
    GameParagraph.innerText =window.localStorage.getItem("game");
+   fcount++;
+   checkLocation;
 });
 LeftButton.addEventListener(`click`, function () {
    
@@ -42,6 +61,8 @@ LeftButton.addEventListener(`click`, function () {
    window.localStorage.setItem("game",JSON.stringify(GList.GameItemLog));
      console.log(window.localStorage.getItem("game"));
      GameParagraph.innerText =window.localStorage.getItem("game");
+     lcount++;
+     checkLocation;
   });
   RightButton.addEventListener(`click`, function () {
    
@@ -55,6 +76,8 @@ LeftButton.addEventListener(`click`, function () {
    window.localStorage.setItem("game",JSON.stringify(GList.GameItemLog));
      console.log(window.localStorage.getItem("game"));
      GameParagraph.innerText =window.localStorage.getItem("game");
+     rcount++;
+     checkLocation;
   });
 LogButton.addEventListener(`click`, function () {
 GameParagraph.innerText = ""; 
