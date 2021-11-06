@@ -32,7 +32,7 @@ GameParagraph.innerText = "You choose to go forward.";
 });
 LogButton.addEventListener(`click`, function () {
 GameParagraph.innerText = ""; 
-GameParagraph.innerText = this.displayGameList(); 
+GameParagraph.innerText = GList.displayGameList(); 
 
   
 });
