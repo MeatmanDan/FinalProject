@@ -23,7 +23,7 @@ GameParagraph.innerText= window.localStorage.getItem("Game") + " " + GList.GameI
 //GAME LOGIC 
 function checkLocation() 
 { 
-    if(fcount == 1 && rcount == 0 && lcount== 0) 
+    if(fcount == 1 && rcount == 0 && lcount== 0 && !torchev) 
     {
         fcount=0; 
         rcount=0; 
@@ -36,6 +36,11 @@ function checkLocation()
     lcount==0; 
  
     } 
+    if(fcount == 1 && rcount == 0 && lcount== 0 && !torchev) 
+    {
+      GList.addGameItem("With the torch you now see a an opening in the rock that is easily reachable. you climb through and are presented with another 3 choices");
+    GameParagraph.innerText ="With the torch you now see a an opening in the rock that is easily reachable. you climb through and are presented with another 3 choices"; 
+    }
     if(fcount == 0 && rcount == 1 && lcount== 0) 
     {
     GList.addGameItem("you push towards your right and feel stone surround you on both of your sides until you reach another opening");
