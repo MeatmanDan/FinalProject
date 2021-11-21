@@ -36,7 +36,7 @@ function checkLocation()
     lcount==0; 
  
     } 
-    if(fcount == 1 && rcount == 0 && lcount== 0 && !torchev) 
+    if(fcount == 1 && rcount == 0 && lcount== 0 && torchev) 
     {
       GList.addGameItem("With the torch you now see a an opening in the rock that is easily reachable. you climb through and are presented with another 3 choices");
     GameParagraph.innerText ="With the torch you now see a an opening in the rock that is easily reachable. you climb through and are presented with another 3 choices"; 
