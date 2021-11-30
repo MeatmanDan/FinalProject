@@ -8,7 +8,6 @@ const PunchButton = document.getElementById('PunchButton');
 const DodgeButton = document.getElementById('DodgeButton');
 const KickButton = document.getElementById('KickButton');
 
-//const Resetbutton = document.getElementById('Resetbutton');
 var lcount =0; 
 var rcount=0; 
 var fcount=0; 
