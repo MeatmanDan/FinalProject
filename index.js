@@ -61,15 +61,15 @@ if(ran > 3 && ran <= 6)
 edcount++; 
 if (ran >6 && ran <= 9)
 ekcount++;
-//if(enemyh >1 && userh ==0)
-//GList.addGameItem("you have died. Thank you for playing");
- // GameParagraph.innerText ="you have died. Thank you for playing";
-  //localStorage.clear();
+if(userh ==0)
+GList.addGameItem("you have died. Thank you for playing");
+  GameParagraph.innerText ="you have died. Thank you for playing";
+  localStorage.clear();
   
- // if(enemyh==0 && userh <1)
-//GList.addGameItem("you have triumphed. Thank you for playing");
- // GameParagraph.innerText ="you have triumphed. Thank you for playing";
- // localStorage.clear();
+  if(enemyh==0 )
+GList.addGameItem("you have triumphed. Thank you for playing");
+  GameParagraph.innerText ="you have triumphed. Thank you for playing";
+  localStorage.clear();
 
 
 if(epcount ==1 && dcount ==1) 
@@ -97,7 +97,7 @@ if(epcount ==1 && pcount ==1)
 }
 if(ekcount ==1 && dcount ==1) 
 {
-
+  
   userh-2; 
   dcount ==0; 
   pcount ==0; 
@@ -148,7 +148,7 @@ if(edcount ==1 && pcount ==1)
 }
 if(epcount ==1 && kcount ==1) 
 {
-  
+
   dcount ==0; 
   pcount ==0; 
   edcount ==0; 
@@ -158,6 +158,20 @@ if(epcount ==1 && kcount ==1)
   userh-2;
   GList.addGameItem("they punch you and you kick them, Your Health: " + userh + " Enemy Health: " + enemyh);
   GameParagraph.innerText ="they punch you and you kick them Your Health: " + userh + " Enemy Health: " + enemyh;
+ 
+}
+if(ekcount ==1 && pcount ==1) 
+{
+
+  dcount ==0; 
+  pcount ==0; 
+  edcount ==0; 
+  epcount ==0; 
+  ekcount ==0;
+  enemyh-2;
+  userh-2;
+  GList.addGameItem("they kick you and you punch them, Your Health: " + userh + " Enemy Health: " + enemyh);
+  GameParagraph.innerText ="they kick you and you punch them Your Health: " + userh + " Enemy Health: " + enemyh;
  
 }
  
