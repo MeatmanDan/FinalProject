@@ -89,8 +89,8 @@ GList.addGameItem("They throw a punch but you narrowly dodge");
 if(epcount ==1 && pcount ==1) 
 {
 
-  userh-1; 
-  enemyh-1; 
+  userh = userh-1; 
+  enemyh = enemyh-1; 
   dcount ==0; 
   pcount ==0; 
   edcount ==0; 
@@ -102,7 +102,7 @@ if(epcount ==1 && pcount ==1)
 if(ekcount ==1 && dcount ==1) 
 {
   
-  userh-2; 
+  userh = userh-2; 
   dcount ==0; 
   pcount ==0; 
   edcount ==0; 
@@ -115,8 +115,8 @@ if(ekcount ==1 && dcount ==1)
 if(ekcount ==1 && kcount ==1) 
 {
 
-  userh-1; 
-  enemyh-1; 
+  userh=userh-1; 
+  enemyh=enemyh-1; 
   dcount ==0; 
   pcount ==0; 
   edcount ==0; 
@@ -129,7 +129,7 @@ if(ekcount ==1 && kcount ==1)
 if(edcount ==1 && kcount ==1) 
 {
 
-  enemyh-2; 
+  enemyh=enemyh-2; 
   dcount ==0; 
   pcount ==0; 
   edcount ==0; 
@@ -158,8 +158,8 @@ if(epcount ==1 && kcount ==1)
   edcount ==0; 
   epcount ==0; 
   ekcount ==0;
-  enemyh-2;
-  userh-2;
+  enemyh=enemyh-2;
+  userh=userh-2;
   GList.addGameItem("they punch you and you kick them, Your Health: " + userh + " Enemy Health: " + enemyh);
   GameParagraph.innerText ="they punch you and you kick them Your Health: " + userh + " Enemy Health: " + enemyh;
  
@@ -172,8 +172,8 @@ if(ekcount ==1 && pcount ==1)
   edcount ==0; 
   epcount ==0; 
   ekcount ==0;
-  enemyh-2;
-  userh-2;
+  enemyh=enemyh-2;
+  userh=userh-2;
   GList.addGameItem("they kick you and you punch them, Your Health: " + userh + " Enemy Health: " + enemyh);
   GameParagraph.innerText ="they kick you and you punch them Your Health: " + userh + " Enemy Health: " + enemyh;
  
