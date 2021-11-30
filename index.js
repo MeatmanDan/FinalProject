@@ -3,10 +3,12 @@ const LeftButton = document.getElementById('LeftArrowButton');
 const UpButton = document.getElementById('UpArrowButton');
 const RightButton = document.getElementById('RightArrowButton');
 const LogButton = document.getElementById('LogButton');
+//const Resetbutton = document.getElementById('Resetbutton');
 var lcount =0; 
 var rcount=0; 
 var fcount=0; 
 var torchev = false; 
+var action = false; 
 
 const GameParagraph = document.getElementById('Game');
 const Gamelog = document.getElementById('Game');
@@ -21,6 +23,29 @@ GameParagraph.innerText= window.localStorage.getItem("Game") + " " + GList.GameI
     }
 });
 //GAME LOGIC 
+
+
+function battlelogic()
+{
+  //HIDE and Show buttons 
+    if (LeftButton.style.display === "none") {
+      LeftButton.style.display = "block";
+    } else {
+      LeftButton.style.display = "none";
+    }
+    if (UpButton.style.display === "none") {
+      UpButton.style.display = "block";
+    } else {
+      UpButton.style.display = "none";
+    }
+    if (RightButton.style.display === "none") {
+      RightButton.style.display = "block";
+    } else {
+      RightButton.style.display = "none";
+    }
+  
+
+}
 function checkLocation() 
 { 
     if(fcount == 1 && rcount == 0 && lcount== 0 && !torchev) 
@@ -39,12 +64,19 @@ function checkLocation()
     if(fcount == 1 && rcount == 0 && lcount== 0 && torchev) 
     {
       GList.addGameItem("With the torch you now see a an opening in the rock that is easily reachable. you climb through and are presented with another 3 choices");
-    GameParagraph.innerText ="With the torch you now see a an opening in the rock that is easily reachable. you climb through and are presented with another 3 choices"; 
+    GameParagraph.innerText ="With the torch you now see a an opening in the rock that is easily reachable. you climb through and can only continue forward"; 
+    document.body.style.backgroundColor = "red";
+    document.body.style.backgroundColor = "white";
+    action =true; 
+
     }
     if(fcount == 0 && rcount == 1 && lcount== 0) 
     {
     GList.addGameItem("you push towards your right and feel stone surround you on both of your sides until you reach another opening");
-    GameParagraph.innerText ="you push towards your right and feel stone surround you on both of your sides until you reach another opening"
+    GameParagraph.innerText ="you push towards your right and feel stone surround you on both of your sides until you reach another dead end. you return to where you came from"
+    fcount=0; 
+    rcount=0; 
+    lcount=0; 
    
 
     }
@@ -88,6 +120,8 @@ GameParagraph.innerText = "You choose to go forward.";
    GameParagraph.innerText =window.localStorage.getItem("game");
    fcount++;
    checkLocation();
+   if (action)
+   battlelogic(); 
 });
 LeftButton.addEventListener(`click`, function () {
    
