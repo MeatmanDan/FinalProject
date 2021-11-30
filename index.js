@@ -12,23 +12,21 @@ var rcount=0;
 var fcount=0; 
 var torchev = false; 
 var action = false; 
+if (PunchButton.style.display === "none") {
+  PunchButton.style.display = "block";
+} else {
+  PunchButton.style.display = "none";
+}
+if (DodgeButton.style.display === "none") {
+  DodgeButton.style.display = "block";
+} else {
+  DodgeButton.style.display = "none";
+}
+
 
 const GameParagraph = document.getElementById('Game');
 const Gamelog = document.getElementById('Game');
 let GList = new Game(""); 
-GList.addEventListener("load", function() {
-  if (PunchButton.style.display === "none") {
-    PunchButton.style.display = "block";
-  } else {
-    PunchButton.style.display = "none";
-  }
-  if (DodgeButton.style.display === "none") {
-    DodgeButton.style.display = "block";
-  } else {
-    DodgeButton.style.display = "none";
-  }
-
-});
 GList.addGameItem("You awake in a dark cave. You can see that there are three ways for you to progress dimly as your eyes begin to adjust to the light.");
 window.addEventListener('load', (event) => {
     if(window.localStorage.getItem("Game") !==null)  
