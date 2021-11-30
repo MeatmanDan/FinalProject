@@ -1,4 +1,5 @@
 localStorage;
+localStorage.clear();
 const LeftButton = document.getElementById('LeftArrowButton');
 const UpButton = document.getElementById('UpArrowButton');
 const RightButton = document.getElementById('RightArrowButton');
