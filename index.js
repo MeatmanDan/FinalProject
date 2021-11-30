@@ -74,7 +74,7 @@ GList.addGameItem("you have triumphed. Thank you for playing");
   localStorage.clear();
   }
 
-  if(edcount =1 && dcount =1) 
+  if(edcount ==1 && dcount ==1) 
   {
   GList.addGameItem("you both dodge");
     GameParagraph.innerText ="you both dodge";
@@ -84,7 +84,7 @@ GList.addGameItem("you have triumphed. Thank you for playing");
     epcount =0; 
     ekcount =0;
   }
-if(epcount =1 && dcount =1) 
+if(epcount ==1 && dcount ==1) 
 {
 GList.addGameItem("They throw a punch but you narrowly dodge");
   GameParagraph.innerText ="They throw a punch but you narrowly dodge";
@@ -94,7 +94,7 @@ GList.addGameItem("They throw a punch but you narrowly dodge");
   epcount =0; 
   ekcount =0;
 }
-if(epcount =1 && pcount =1) 
+if(epcount ==1 && pcount ==1) 
 {
 
   userh = userh-1; 
@@ -107,7 +107,7 @@ if(epcount =1 && pcount =1)
   GList.addGameItem("you both throw a punch, hitting eachothers faces and then both recoil, Your Health: " + userh + " Enemy Health: " + enemyh);
   GameParagraph.innerText =" you both throw a punch, hitting eachothers faces and then both recoil ,Your Health: " + userh + " Enemy Health: " + enemyh;
 }
-if(ekcount =1 && dcount =1) 
+if(ekcount ==1 && dcount ==1) 
 {
   
   userh = userh-2; 
@@ -120,7 +120,7 @@ if(ekcount =1 && dcount =1)
   GameParagraph.innerText ="They kick you and it hits you in your chest, Your Health: " + userh + " Enemy Health: " + enemyh;
  
 }
-if(ekcount =1 && kcount =1) 
+if(ekcount ==1 && kcount ==1) 
 {
 
   userh=userh-1; 
@@ -134,7 +134,7 @@ if(ekcount =1 && kcount =1)
   GameParagraph.innerText ="They kick you and you kick them and you both hit each others shins, Your Health: " + userh + " Enemy Health: " + enemyh;
  
 }
-if(edcount =1 && kcount =1) 
+if(edcount ==1 && kcount ==1) 
 {
 
   enemyh==enemyh-2; 
@@ -146,7 +146,7 @@ if(edcount =1 && kcount =1)
   GList.addGameItem("They Dodge and you kick them squarely in the chest, Your Health: " + userh + " Enemy Health: " + enemyh);
   GameParagraph.innerText ="They Dodge and you kick them squarely in the chest, Your Health: " + userh + " Enemy Health: " + enemyh;
 }
-if(edcount =1 && pcount =1) 
+if(edcount ==1 && pcount ==1) 
 {
 
   dcount =0; 
@@ -158,7 +158,7 @@ if(edcount =1 && pcount =1)
   GameParagraph.innerText ="They Dodge and you punch above them, Your Health: " + userh + " Enemy Health: " + enemyh;
  
 }
-if(epcount =1 && kcount =1) 
+if(epcount ==1 && kcount ==1) 
 {
 
   dcount =0; 
@@ -172,7 +172,7 @@ if(epcount =1 && kcount =1)
   GameParagraph.innerText ="they punch you and you kick them Your Health: " + userh + " Enemy Health: " + enemyh;
  
 }
-if(ekcount =1 && pcount =1) 
+if(ekcount ==1 && pcount ==1) 
 {
 
   dcount =0; 
