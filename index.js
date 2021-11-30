@@ -63,10 +63,12 @@ ekcount++;
 if(enemyh >1 && userh ==0)
 GList.addGameItem("you have died. Thank you for playing");
   GameParagraph.innerText ="you have died. Thank you for playing";
+  Storage.clear();
   
   if(enemyh==0 && userh <1)
 GList.addGameItem("you have triumphed. Thank you for playing");
   GameParagraph.innerText ="you have triumphed. Thank you for playing";
+  Storage.clear();
 
 
 if(epcount ==1 && dcount ==1) 
