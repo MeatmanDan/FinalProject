@@ -74,7 +74,16 @@ GList.addGameItem("you have triumphed. Thank you for playing");
   localStorage.clear();
   }
 
-
+  if(edcount ==1 && dcount ==1) 
+  {
+  GList.addGameItem("you both dodge");
+    GameParagraph.innerText ="you both dodge";
+    dcount ==0; 
+    pcount ==0; 
+    edcount ==0; 
+    epcount ==0; 
+    ekcount ==0;
+  }
 if(epcount ==1 && dcount ==1) 
 {
 GList.addGameItem("They throw a punch but you narrowly dodge");
