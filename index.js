@@ -54,11 +54,11 @@ GameParagraph.innerText= window.localStorage.getItem("Game") + " " + GList.GameI
 function battlelogic()
 {
   var ran = Math.floor(Math.random() * 10);
-if(ran > 0 && <= 3) 
+if(ran > 0 &&  ran <= 3) 
 epcount++; 
-if(ran > 3 && <= 6)
+if(ran > 3 && ran <= 6)
 edcount++; 
-if (ran >6 && <= 9)
+if (ran >6 && ran <= 9)
 ekcount++;
 if(enemyh >1 && userh ==0)
 GList.addGameItem("you have died. Thank you for playing");
