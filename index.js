@@ -18,8 +18,8 @@ var kcount =0;
 var edcount =0; 
 var epcount =0;
 var ekcount =0; 
-const userh =10; 
-const enemyh =10; 
+var userh =10; 
+var enemyh =10; 
 var torchev = false; 
 var action = false; 
 if (PunchButton.style.display === "none") {
