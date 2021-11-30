@@ -5,11 +5,20 @@ const RightButton = document.getElementById('RightArrowButton');
 const LogButton = document.getElementById('LogButton');
 const PunchButton = document.getElementById('PunchButton');
 const DodgeButton = document.getElementById('DodgeButton');
+const KickButton = document.getElementById('KickButton');
 
 //const Resetbutton = document.getElementById('Resetbutton');
 var lcount =0; 
 var rcount=0; 
 var fcount=0; 
+var dcount =0; 
+var pcount =0;
+var kcount =0;
+var edcount =0; 
+var epcount =0;
+var ekcount =0; 
+var userh =10; 
+var enemyh =10; 
 var torchev = false; 
 var action = false; 
 if (PunchButton.style.display === "none") {
@@ -21,6 +30,11 @@ if (DodgeButton.style.display === "none") {
   DodgeButton.style.display = "block";
 } else {
   DodgeButton.style.display = "none";
+}
+if (KickButton.style.display === "none") {
+  KickButton.style.display = "block";
+} else {
+  KickButton.style.display = "none";
 }
 
 
@@ -37,10 +51,129 @@ GameParagraph.innerText= window.localStorage.getItem("Game") + " " + GList.GameI
     }
 });
 //GAME LOGIC 
-
-
 function battlelogic()
 {
+  var ran = Math.floor(Math.random() * 10);
+if(ran > 0 && <= 3) 
+epcount++; 
+if(ran > 3 && <= 6)
+edcount++; 
+if (ran >6 && <= 9)
+ekcount++;
+if(enemyh >1 && userh ==0)
+GList.addGameItem("you have died. Thank you for playing");
+  GameParagraph.innerText ="you have died. Thank you for playing";
+  
+  if(enemyh==0 && userh <1)
+GList.addGameItem("you have triumphed. Thank you for playing");
+  GameParagraph.innerText ="you have triumphed. Thank you for playing";
+
+
+if(epcount ==1 && dcount ==1) 
+{
+GList.addGameItem("They throw a punch but you narrowly dodge");
+  GameParagraph.innerText ="They throw a punch but you narrowly dodge";
+  dcount ==0; 
+  pcount ==0; 
+  edcount ==0; 
+  epcount ==0; 
+  ekcount ==0;
+}
+if(epcount ==1 && dcount ==0 && pcount ==1) 
+{
+GList.addGameItem("you both throw a punch, hitting eachothers faces and then both recoil");
+  GameParagraph.innerText ="you both throw a punch, hitting eachothers faces and then both recoil";
+  userh-1; 
+  enemyh-1; 
+  dcount ==0; 
+  pcount ==0; 
+  edcount ==0; 
+  epcount ==0; 
+  ekcount ==0; 
+  GList.addGameItem("Your Health: " + userh + " Enemy Health: " + enemyh);
+  GameParagraph.innerText ="Your Health: " + userh + " Enemy Health: " + enemyh;
+}
+if(ekcount ==1 && dcount ==1) 
+{
+GList.addGameItem("They kick you and it hits you in your chest");
+  GameParagraph.innerText ="They kick you and it hits you in your chest";
+  userh-2; 
+  dcount ==0; 
+  pcount ==0; 
+  edcount ==0; 
+  epcount ==0; 
+  ekcount ==0;
+  GList.addGameItem("Your Health: " + userh + " Enemy Health: " + enemyh);
+  GameParagraph.innerText ="Your Health: " + userh + " Enemy Health: " + enemyh;
+ 
+}
+if(ekcount ==1 && kcount ==1) 
+{
+GList.addGameItem("They kick you and you kick them and you both hit each others shins");
+  GameParagraph.innerText ="They kick you and you kick them and you both hit each others shins";
+  userh-1; 
+  enemyh-1; 
+  dcount ==0; 
+  pcount ==0; 
+  edcount ==0; 
+  epcount ==0; 
+  ekcount ==0;
+  GList.addGameItem("Your Health: " + userh + " Enemy Health: " + enemyh);
+  GameParagraph.innerText ="Your Health: " + userh + " Enemy Health: " + enemyh;
+ 
+}
+if(edcount ==1 && kcount ==1) 
+{
+GList.addGameItem("They Dodge and you kick them squarely in the chest");
+  GameParagraph.innerText ="They Dodge and you kick them squarely in the chest"; 
+  enemyh-2; 
+  dcount ==0; 
+  pcount ==0; 
+  edcount ==0; 
+  epcount ==0; 
+  ekcount ==0;
+  GList.addGameItem("Your Health: " + userh + " Enemy Health: " + enemyh);
+  GameParagraph.innerText ="Your Health: " + userh + " Enemy Health: " + enemyh;
+}
+if(edcount ==1 && pcount ==1) 
+{
+GList.addGameItem("They Dodge and you punch above them");
+  GameParagraph.innerText ="They Dodge and you punch above them";  
+  dcount ==0; 
+  pcount ==0; 
+  edcount ==0; 
+  epcount ==0; 
+  ekcount ==0;
+  GList.addGameItem("Your Health: " + userh + " Enemy Health: " + enemyh);
+  GameParagraph.innerText ="Your Health: " + userh + " Enemy Health: " + enemyh;
+ 
+}
+if(epcount ==1 && dcount ==1) 
+{
+GList.addGameItem("you Dodge and they punch above you");
+  GameParagraph.innerText ="you Dodge and they punch above you";  
+  dcount ==0; 
+  pcount ==0; 
+  edcount ==0; 
+  epcount ==0; 
+  ekcount ==0;
+  GList.addGameItem("Your Health: " + userh + " Enemy Health: " + enemyh);
+  GameParagraph.innerText ="Your Health: " + userh + " Enemy Health: " + enemyh;
+ 
+}
+ 
+
+}
+function battlesetup()
+{
+  GList.addGameItem("You are ambushed by a humanoid wearing a bandana over half of their face. They throw a punch at you and you narrowly dodge");
+    GameParagraph.innerText ="You are ambushed by a humanoid wearing a bandana over half of their face. They throw a punch at you and you narrowly dodge"; 
+
+    battlelogic();
+}
+function hidelogic()
+{
+
   //HIDE and Show buttons 
     if (LeftButton.style.display === "none") {
       LeftButton.style.display = "block";
@@ -56,6 +189,21 @@ function battlelogic()
       RightButton.style.display = "block";
     } else {
       RightButton.style.display = "none";
+    }
+    if (PunchButton.style.display === "none") {
+      PunchButton.style.display = "block";
+    } else {
+      PunchButton.style.display = "none";
+    }
+    if (DodgeButton.style.display === "none") {
+      DodgeButton.style.display = "block";
+    } else {
+      DodgeButton.style.display = "none";
+    }
+    if (KickButton.style.display === "none") {
+      KickButton.style.display = "block";
+    } else {
+      KickButton.style.display = "none";
     }
   
 
@@ -135,7 +283,8 @@ GameParagraph.innerText = "You choose to go forward.";
    fcount++;
    checkLocation();
    if (action)
-   battlelogic(); 
+   hidelogic(); 
+   battlesetup();
 });
 LeftButton.addEventListener(`click`, function () {
    
@@ -167,6 +316,51 @@ LeftButton.addEventListener(`click`, function () {
      rcount++;
      checkLocation();
   });
+  PunchButton.addEventListener(`click`, function () {
+   
+   // GList.addGameItem("You throw a punch.");
+    //GameParagraph.innerText = ""; 
+    //GameParagraph.innerText = "You throw a punch."; 
+     
+     // console.log(GList.GameItemLog);
+     
+    
+     window.localStorage.setItem("game",JSON.stringify(GList.GameItemLog));
+       console.log(window.localStorage.getItem("game"));
+       GameParagraph.innerText =window.localStorage.getItem("game");
+       pcount++; 
+       battlelogic();
+    });
+    DodgeButton.addEventListener(`click`, function () {
+   
+      // GList.addGameItem("You throw a punch.");
+       //GameParagraph.innerText = ""; 
+       //GameParagraph.innerText = "You throw a punch."; 
+        
+        // console.log(GList.GameItemLog);
+        
+       
+        window.localStorage.setItem("game",JSON.stringify(GList.GameItemLog));
+          console.log(window.localStorage.getItem("game"));
+          GameParagraph.innerText =window.localStorage.getItem("game");
+          dcount++; 
+          battlelogic();
+       });
+       KickButton.addEventListener(`click`, function () {
+   
+        // GList.addGameItem("You throw a punch.");
+         //GameParagraph.innerText = ""; 
+         //GameParagraph.innerText = "You throw a punch."; 
+          
+          // console.log(GList.GameItemLog);
+          
+         
+          window.localStorage.setItem("game",JSON.stringify(GList.GameItemLog));
+            console.log(window.localStorage.getItem("game"));
+            GameParagraph.innerText =window.localStorage.getItem("game");
+            kcount++; 
+            battlelogic();
+         });
 LogButton.addEventListener(`click`, function () {
 GameParagraph.innerText = ""; 
 GameParagraph.innerText = GList.displayGameList(); 
