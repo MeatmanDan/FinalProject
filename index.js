@@ -18,8 +18,8 @@ var kcount =0;
 var edcount =0; 
 var epcount =0;
 var ekcount =0; 
-var userh =10; 
-var enemyh =10; 
+const userh =10; 
+const enemyh =10; 
 var torchev = false; 
 var action = false; 
 if (PunchButton.style.display === "none") {
@@ -61,14 +61,14 @@ if(ran > 3 && ran <= 6)
 edcount++; 
 if (ran >6 && ran <= 9)
 ekcount++;
-if(userh =0)
+if(userh ==0)
 {
 GList.addGameItem("you have died. Thank you for playing");
   GameParagraph.innerText ="you have died. Thank you for playing";
   localStorage.clear();
 }
   
-  if(enemyh=0 )
+  if(enemyh==0 )
   {
 GList.addGameItem("you have triumphed. Thank you for playing");
   GameParagraph.innerText ="you have triumphed. Thank you for playing";
