@@ -61,12 +61,12 @@ if(ran > 3 && ran <= 6)
 edcount++; 
 if (ran >6 && ran <= 9)
 ekcount++;
-if(userh ==0)
+if(userh =0)
 GList.addGameItem("you have died. Thank you for playing");
   GameParagraph.innerText ="you have died. Thank you for playing";
   localStorage.clear();
   
-  if(enemyh==0 )
+  if(enemyh=0 )
 GList.addGameItem("you have triumphed. Thank you for playing");
   GameParagraph.innerText ="you have triumphed. Thank you for playing";
   localStorage.clear();
