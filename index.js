@@ -3,6 +3,9 @@ const LeftButton = document.getElementById('LeftArrowButton');
 const UpButton = document.getElementById('UpArrowButton');
 const RightButton = document.getElementById('RightArrowButton');
 const LogButton = document.getElementById('LogButton');
+const PunchButton = document.getElementById('PunchButton');
+const DodgeButton = document.getElementById('DodgeButton');
+
 //const Resetbutton = document.getElementById('Resetbutton');
 var lcount =0; 
 var rcount=0; 
@@ -13,6 +16,19 @@ var action = false;
 const GameParagraph = document.getElementById('Game');
 const Gamelog = document.getElementById('Game');
 let GList = new Game(""); 
+GList.addEventListener("load", function() {
+  if (PunchButton.style.display === "none") {
+    PunchButton.style.display = "block";
+  } else {
+    PunchButton.style.display = "none";
+  }
+  if (DodgeButton.style.display === "none") {
+    DodgeButton.style.display = "block";
+  } else {
+    DodgeButton.style.display = "none";
+  }
+
+});
 GList.addGameItem("You awake in a dark cave. You can see that there are three ways for you to progress dimly as your eyes begin to adjust to the light.");
 window.addEventListener('load', (event) => {
     if(window.localStorage.getItem("Game") !==null)  
